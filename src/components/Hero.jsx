@@ -25,7 +25,7 @@ const Hero = () => {
         {loading ? (
           <Skeleton className="h-[125px] w-[250px] rounded-xl" />
         ) : (
-          <img src="/public/gradient.png" alt="Logo" />
+          <img src="logo.png" alt="Logo" />
         )}
       </div>
 
@@ -117,7 +117,7 @@ const Hero = () => {
         {loading ? (
           <Skeleton className="h-[125px] w-[250px] rounded-xl" />
         ) : (
-          <img className="w-60 lg:w-96 xl:w-96" src="/public/logo.png" alt="Logo" />
+          <img className="w-60 lg:w-96 xl:w-96" src="logo.png" alt="Logo" />
         )}
       </div>
     </main>
