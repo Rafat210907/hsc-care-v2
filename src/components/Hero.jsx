@@ -94,7 +94,7 @@ const Hero = () => {
       
       {/* Documentation Button with Beam */}
       <Link
-        href="/carousel"
+        to="/carousel"
         className="relative inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2a2a2a] font-semibold tracking-wide text-sm sm:text-lg transition-colors duration-300 hover:bg-[#1a1a1a] overflow-hidden"
       >
         {/* Beam container */}
