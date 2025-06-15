@@ -25,7 +25,7 @@ const Hero = () => {
         {loading ? (
           <Skeleton className="h-[125px] w-[250px] rounded-xl" />
         ) : (
-          <img src="/src/assets/logo.png" alt="Logo" />
+          <img src="./../assets/logo.png" alt="Logo" />
         )}
       </div>
 
