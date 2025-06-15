@@ -5,8 +5,8 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { OrbitingCircles } from "@/components/magicui/OrbitingCircles";
 import { File, Settings, Search } from "lucide-react";
 import { BorderBeam } from "@/components/magicui/BorderBeam";
-import OurTeachersPop from "@/components/OurTeachers/OurTeachersPop";
-import teachersData from "@/components/OurTeachers/TeachersData";
+import OurTeachersPop from "@/components/Ourteachers/OurTeachersPop";
+import teachersData from "@/components/Ourteachers/TeachersData";
 
 const OurTeachers = () => {
   const [loading, setLoading] = useState(true);
