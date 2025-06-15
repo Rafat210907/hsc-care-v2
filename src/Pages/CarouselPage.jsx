@@ -3,7 +3,7 @@ import EmblaCarousel from '../components/carousel/EmblaCarousel'
 
 import { BoxReveal } from "@/components/magicui/BoxReveal"
 import { AuroraText } from "@/components/magicui/AuroraText"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@/components/ui/Skeleton"
 
 const SLIDES = Array.from(Array(5).keys())
 const OPTIONS = { loop: true }

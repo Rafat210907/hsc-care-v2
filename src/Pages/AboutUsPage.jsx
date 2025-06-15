@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BoxReveal } from "@/components/magicui/BoxReveal"
 import { AuroraText } from "@/components/magicui/AuroraText"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@/components/ui/Skeleton"
 
 const AboutUsPage = () => {
   const [loading, setLoading] = useState(true);

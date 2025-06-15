@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 // UI 
 import { AuroraText } from "@/components/magicui/AuroraText";
 import { BoxReveal } from "@/components/magicui/BoxReveal";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/Skeleton";
 import { ShinyButton } from "@/components/magicui/ShinyButton";
 import { ShimmerButton } from "@/components/magicui/ShimmerButton";
 import { BorderBeam } from "@/components/magicui/BorderBeam";

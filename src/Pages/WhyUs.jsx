@@ -3,7 +3,7 @@ import React from "react";
 import ImgGIF from "../assets/Animationwhy.json";
 import Lottie from "lottie-react";
 import { useState, useEffect } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ui/Skeleton";
 import { BoxReveal } from "@/components/magicui/BoxReveal";
 import { BorderBeam } from "@/components/magicui/BorderBeam";
 import 'boxicons/css/boxicons.min.css';
