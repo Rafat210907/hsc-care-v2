@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { BoxReveal } from "@/components/magicui/BoxReveal";
 import { BorderBeam } from "@/components/magicui/BorderBeam";
 import 'boxicons/css/boxicons.min.css';
+import { Link } from "react-router-dom"
 
 
 const WhyUs = () => {
@@ -50,7 +51,7 @@ const WhyUs = () => {
   <BoxReveal>
     <div className="flex gap-6">
       {/* Documentation Button with Beam */}
-      <a
+      <Link
         href="/"
         className="relative inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2a2a2a] font-semibold tracking-wide text-sm sm:text-lg transition-colors duration-300 hover:bg-[#1a1a1a] overflow-hidden"
       >
@@ -64,7 +65,7 @@ const WhyUs = () => {
         <span className="relative flex items-center gap-2 text-white z-10">
           Home <i className="bx bx-link-external"></i>
         </span>
-      </a>
+      </Link>
 
     </div>
   </BoxReveal>

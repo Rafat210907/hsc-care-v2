@@ -1,5 +1,6 @@
 import 'boxicons/css/boxicons.min.css';
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 
 // UI 
 import { AuroraText } from "@/components/magicui/AuroraText";
@@ -92,7 +93,7 @@ const Hero = () => {
     <div className="flex gap-6 mt-6">
       
       {/* Documentation Button with Beam */}
-      <a
+      <Link
         href="/carousel"
         className="relative inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2a2a2a] font-semibold tracking-wide text-sm sm:text-lg transition-colors duration-300 hover:bg-[#1a1a1a] overflow-hidden"
       >
@@ -106,7 +107,7 @@ const Hero = () => {
         <span className="relative flex items-center gap-2 text-white z-10">
           Get Started <i className="bx bx-link-external"></i>
         </span>
-      </a>
+      </Link>
     </div>
   </BoxReveal>
 )}
