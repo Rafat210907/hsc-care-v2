@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { Skeleton } from "@/components/ui/skeleton"; // adjust if needed
+import { Skeleton } from "@/components/ui/Skeleton"; // adjust if needed
 import { RippleButton } from "@/components/magicui/RippleButton";
 import batchImage from "./../../assets/images/batch.jpg"; // adjust path
 import batchImage2 from "./../../assets/images/batch-2.jpg"; // adjust path
