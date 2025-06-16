@@ -22,17 +22,17 @@ const Header = () => {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="relative inline-block rounded-lg overflow-hidden">
+      <div className="relative inline-block rounded-lg overflow-hidden border border-gray-900">
         {/* Beam border behind */}
         <BorderBeam
           duration={8}
-          size={700}
+          size={100}
           className="absolute inset-0 pointer-events-none from-transparent via-[#3737e7] to-transparent rounded-lg"
         />
         <BorderBeam
           duration={8}
           delay={4}
-          size={800}
+          size={100}
           className="absolute inset-0 pointer-events-none from-transparent via-[#4D4DFF] to-transparent rounded-lg"
         />
 
