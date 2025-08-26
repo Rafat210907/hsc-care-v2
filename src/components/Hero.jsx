@@ -1,27 +1,26 @@
+// ------------------ Imports ------------------
 import 'boxicons/css/boxicons.min.css';
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
-
-// UI 
+import { Link } from "react-router-dom";
 import { AuroraText } from "@/components/magicui/AuroraText";
 import { BoxReveal } from "@/components/magicui/BoxReveal";
 import { Skeleton } from "@/components/ui/Skeleton";
-import { ShinyButton } from "@/components/magicui/ShinyButton";
-import { ShimmerButton } from "@/components/magicui/ShimmerButton";
 import { BorderBeam } from "@/components/magicui/BorderBeam";
 
+// ------------------ Component ------------------
 const Hero = () => {
   const [loading, setLoading] = useState(true);
 
+  // ------------------ Effects ------------------
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <main className="relative flex flex-col md:flex-row lg:flex-row md:mr-10 md:items-center justify-between min-h-[calc(90vh-7rem)] lg:mt-20 bottom-3 2xl:ml-72">
+    <main className="relative flex flex-col md:flex-row items-center justify-between min-h-[calc(90vh-7rem)] lg:mt-20 2xl:ml-72 md:mr-10">
 
-      {/* Logo on top for sm/md */}
+      {/* ------------------ Logo (Small Screens) ------------------ */}
       <div className="block lg:hidden w-80 mx-auto">
         {loading ? (
           <Skeleton className="h-[125px] w-[250px] rounded-xl" />
@@ -30,32 +29,20 @@ const Hero = () => {
         )}
       </div>
 
-      {/* Text Content */}
+      {/* ------------------ Text Content ------------------ */}
       <div className="max-w-xl ml-[2%] z-10 sm:mt-[15%] md:mt-[10%] lg:mt-0">
-        {/* Tag box */}
+
+        {/* Tag Box */}
         {loading ? (
           <Skeleton className="h-[40px] w-[120px] rounded-full" />
         ) : (
-          
-            <div className="relative w-[95%] sm:w-48 h-10  rounded-full overflow-hidden">
-                {/* Border Beams */}
-                <BorderBeam
-                  duration={6}
-                  size={100}
-                  className="from-transparent via-[#4D4DFF] to-transparent"
-                />
-                <BorderBeam
-                beamHeight={300}
-                  duration={6}
-                  delay={3}
-                  size={100}
-                  className="from-transparent via-purple-500 to-transparent"
-                />
-                {/* Inner text container */}
-                <div className="absolute inset-[3px] bg-black rounded-full flex items-center justify-center gap-1 text-white z-10">
-                  <i className="bx bxs-graduation"></i> INTRODUCING
-                </div>
-              </div>
+          <div className="relative w-[95%] sm:w-48 h-10 rounded-full overflow-hidden">
+            <BorderBeam duration={6} size={100} className="from-transparent via-[#4D4DFF] to-transparent" />
+            <BorderBeam beamHeight={300} duration={6} delay={3} size={100} className="from-transparent via-purple-500 to-transparent" />
+            <div className="absolute inset-[3px] bg-black rounded-full flex items-center justify-center gap-1 text-white z-10">
+              <i className="bx bxs-graduation"></i> INTRODUCING
+            </div>
+          </div>
         )}
 
         {/* Heading */}
@@ -78,42 +65,41 @@ const Hero = () => {
         ) : (
           <BoxReveal>
             <p className="text-base sm:text-xl tracking-wider text-gray-400 max-w-[25rem] lg:max-w-[30rem]">
-              <AuroraText>Welcome To HSC Care Website. <br />Copyright © 2025 HSC CARE  </AuroraText>
+              <AuroraText>
+                Welcome To HSC Care Website. <br /> Copyright © 2025 HSC CARE
+              </AuroraText>
             </p>
           </BoxReveal>
         )}
 
-{/* Buttons */}
-{loading ? (
-  <div className="flex gap-4 mt-12">
-    <Skeleton className="h-[40px] w-[160px] rounded-full" />
-  </div>
-) : (
-  <BoxReveal>
-    <div className="flex gap-6 mt-6">
-      
-      {/* Documentation Button with Beam */}
-      <Link
-        to="/carousel"
-        className="relative inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2a2a2a] font-semibold tracking-wide text-sm sm:text-lg transition-colors duration-300 hover:bg-[#1a1a1a] overflow-hidden"
-      >
-        {/* Beam container */}
-        <BorderBeam
-          duration={5}
-          size={80}
-          className="absolute inset-0 pointer-events-none from-transparent via-[#eee4e4] to-transparent"
-          style={{ borderRadius: '9999px' }}
-        />
-        <span className="relative flex items-center gap-2 text-white z-10">
-          Get Started <i className="bx bx-link-external"></i>
-        </span>
-      </Link>
-    </div>
-  </BoxReveal>
-)}
-
+        {/* Buttons */}
+        {loading ? (
+          <div className="flex gap-4 mt-12">
+            <Skeleton className="h-[40px] w-[160px] rounded-full" />
+          </div>
+        ) : (
+          <BoxReveal>
+            <div className="flex gap-6 mt-6">
+              <Link
+                to="/carousel"
+                className="relative inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2a2a2a] font-semibold tracking-wide text-sm sm:text-lg transition-colors duration-300 hover:bg-[#1a1a1a] overflow-hidden"
+              >
+                <BorderBeam
+                  duration={5}
+                  size={80}
+                  className="absolute inset-0 pointer-events-none from-transparent via-[#eee4e4] to-transparent"
+                  style={{ borderRadius: '9999px' }}
+                />
+                <span className="relative flex items-center gap-2 text-white z-10">
+                  Get Started <i className="bx bx-link-external"></i>
+                </span>
+              </Link>
+            </div>
+          </BoxReveal>
+        )}
       </div>
-      {/* Logo on right side for lg+ */}
+
+      {/* ------------------ Logo (Large Screens) ------------------ */}
       <div className="hidden lg:block relative lg:mr-[5%] 2xl:mr-64">
         {loading ? (
           <Skeleton className="h-[125px] w-[250px] rounded-xl" />
@@ -125,4 +111,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

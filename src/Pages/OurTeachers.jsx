@@ -1,17 +1,20 @@
+// ------------------ Imports ------------------
 import React, { useState, useEffect } from "react";
+import { File, Settings, Search } from "lucide-react";
 import { BoxReveal } from "@/components/magicui/BoxReveal";
 import { AuroraText } from "@/components/magicui/AuroraText";
 import { OrbitingCircles } from "@/components/magicui/OrbitingCircles";
-import { File, Settings, Search } from "lucide-react";
 import { BorderBeam } from "@/components/magicui/BorderBeam";
 import OurTeachersPop from "@/components/Ourteachers/OurTeachersPop";
 import teachersData from "@/components/Ourteachers/TeachersData";
 
+// ------------------ Component ------------------
 const OurTeachers = () => {
   const [radiusSmall, setRadiusSmall] = useState(83);
   const [radiusLarge, setRadiusLarge] = useState(150);
   const [showModal, setShowModal] = useState(false);
 
+  // ------------------ Responsive Orbit Sizes ------------------
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
@@ -47,8 +50,10 @@ const OurTeachers = () => {
 
       {/* Main Section */}
       <div className="flex flex-col lg:flex-row justify-between mt-10 gap-8">
-        {/* Left Text Content */}
+        
+        {/* Left Content */}
         <div className="flex-1 space-y-6">
+          {/* Heading with Orbit (mobile) */}
           <BoxReveal>
             <div className="flex items-center space-x-20 relative">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-wider">
@@ -57,102 +62,64 @@ const OurTeachers = () => {
                 </AuroraText>
               </h2>
 
-              {/* Orbit for small screens */}
+              {/* Orbit on small screens */}
               <div className="md:hidden">
                 <div className="px-5 max-sm:w-[240px] max-sm:h-[140px] h-[240px] sm:ml-96">
-                  <OrbitingCircles
-                    radius={radiusSmall}
-                    iconSize={20}
-                    reverse
-                    duration={12}
-                  >
-                    <File />
-                    <Settings />
-                    <Search />
+                  <OrbitingCircles radius={radiusSmall} iconSize={20} reverse duration={12}>
+                    <File /> <Settings /> <Search />
                   </OrbitingCircles>
-                  <OrbitingCircles
-                    radius={radiusLarge}
-                    iconSize={30}
-                    duration={18}
-                  >
-                    <File />
-                    <Settings />
-                    <Search />
-                    <File />
+                  <OrbitingCircles radius={radiusLarge} iconSize={30} duration={18}>
+                    <File /> <Settings /> <Search /> <File />
                   </OrbitingCircles>
                 </div>
               </div>
             </div>
           </BoxReveal>
 
+          {/* Description */}
           <BoxReveal>
-            <div className="flex items-end">
-              <div>
-                <p className="text-base sm:text-xl tracking-wider text-gray-400 max-w-[30rem]">
-                  <AuroraText>
-                    A tutor is someone who guides, motivates, and leads students
-                    toward academic success with care and expertise.
-                    At our coaching centre, we proudly offer the best tutors
-                    who are not only knowledgeable but also passionate about
-                    teaching. They ensure every student receives personal
-                    attention and achieves their full potential.
-                  </AuroraText>
-                </p>
-              </div>
-            </div>
+            <p className="text-base sm:text-xl tracking-wider text-gray-400 max-w-[30rem]">
+              <AuroraText>
+                A tutor is someone who guides, motivates, and leads students toward academic success with care and expertise.
+                At our coaching centre, we proudly offer the best tutors who are not only knowledgeable but also passionate about teaching. 
+                They ensure every student receives personal attention and achieves their full potential.
+              </AuroraText>
+            </p>
           </BoxReveal>
 
+          {/* Button */}
           <BoxReveal>
-            <div className="flex gap-6">
-              <button
-                onClick={() => setShowModal(true)}
-                className="relative inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2a2a2a] font-semibold tracking-wide text-sm sm:text-lg transition-colors duration-300 hover:bg-[#1a1a1a] overflow-hidden"
-              >
-                <BorderBeam
-                  duration={5}
-                  size={80}
-                  className="absolute inset-0 pointer-events-none from-transparent via-[#eee4e4] to-transparent"
-                  style={{ borderRadius: "9999px" }}
-                />
-                <span className="relative flex items-center gap-2 text-white z-10">
-                  Teachers <i className="bx bx-link-external"></i>
-                </span>
-              </button>
-            </div>
+            <button
+              onClick={() => setShowModal(true)}
+              className="relative inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#2a2a2a] font-semibold text-sm sm:text-lg transition-colors duration-300 hover:bg-[#1a1a1a] overflow-hidden"
+            >
+              <BorderBeam
+                duration={5}
+                size={80}
+                className="absolute inset-0 pointer-events-none from-transparent via-[#eee4e4] to-transparent"
+                style={{ borderRadius: "9999px" }}
+              />
+              <span className="relative flex items-center gap-2 text-white z-10">
+                Teachers <i className="bx bx-link-external"></i>
+              </span>
+            </button>
           </BoxReveal>
         </div>
 
-        {/* Orbit for large screens */}
+        {/* Orbit on large screens */}
         <div className="hidden lg:flex relative w-full max-w-[400px] h-[400px] items-center justify-center">
-          <OrbitingCircles
-            radius={radiusSmall}
-            iconSize={25}
-            reverse
-            duration={12}
-          >
-            <File />
-            <Settings />
-            <Search />
+          <OrbitingCircles radius={radiusSmall} iconSize={25} reverse duration={12}>
+            <File /> <Settings /> <Search />
           </OrbitingCircles>
-          <OrbitingCircles
-            radius={radiusLarge}
-            iconSize={35}
-            duration={18}
-          >
-            <File />
-            <Settings />
-            <Search />
-            <File />
+          <OrbitingCircles radius={radiusLarge} iconSize={35} duration={18}>
+            <File /> <Settings /> <Search /> <File />
           </OrbitingCircles>
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Teachers Modal */}
       {showModal && (
-        <OurTeachersPop
-          teachers={teachersData}
-          onClose={() => setShowModal(false)}
-        />
+        <OurTeachersPop teachers={teachersData} onClose={() => setShowModal(false)} />
       )}
     </main>
   );

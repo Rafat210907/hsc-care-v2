@@ -1,24 +1,22 @@
+/* ------------------ Tailwind Base ------------------ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "tailwindcss";
+
+/* ------------------ Global Styles ------------------ */
 body {
-    @apply bg-black
-          text-white 
-          relative 
-          font-sans 
-          h-screen 
-          overflow-x-hidden
+  @apply bg-black text-white relative font-sans h-screen overflow-x-hidden;
 }
 
-
+/* ------------------ Orbit Animations ------------------ */
 @theme inline {
   --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
 
   @keyframes orbit {
     0% {
       transform: rotate(calc(var(--angle) * 1deg))
-        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc(var(--angle) * -1deg));
     }
     100% {
       transform: rotate(calc(var(--angle) * 1deg + 360deg))

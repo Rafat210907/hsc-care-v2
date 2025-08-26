@@ -1,10 +1,14 @@
+// ------------------ Imports ------------------
 import { Link } from "react-router-dom";
 
+// ------------------ Component ------------------
 const Footer = () => {
   return (
     <footer className="border-t border-dark/20 bg-black py-4">
       <p className="text-center text-[13px] text-dark">
-        Copyright © 2025 HSC CARE <br /> Developed By{" "}
+        Copyright © 2025 HSC CARE 
+        <br />
+        Developed By{" "}
         <Link
           to="https://guns.lol/zerox6968"
           target="_blank"

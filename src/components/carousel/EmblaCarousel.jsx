@@ -1,25 +1,28 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { Skeleton } from "@/components/ui/Skeleton"; // adjust if needed
+import { Skeleton } from "@/components/ui/Skeleton";
 import { RippleButton } from "@/components/magicui/RippleButton";
 
-import batchImage from "./../../assets/images/batch.jpg"; // adjust path
-import batchImage2 from "./../../assets/images/batch-2.jpg"; // adjust path
-import gP from "./../../assets/images/gp.jpg"; // adjust path
-import gP2 from "./../../assets/images/gp2.JPG"; 
-import batch23 from "./../../assets/images/hsc-care-hsc-23-batch.jpg"; // adjust path
-import prize from "./../../assets/images/prize.png"; // adjust path
+// Images
+import batchImage from "./../../assets/images/batch.jpg";
+import batchImage2 from "./../../assets/images/batch-2.jpg";
+import gP from "./../../assets/images/gp.jpg";
+import gP2 from "./../../assets/images/gp2.JPG";
+import batch23 from "./../../assets/images/hsc-care-hsc-23-batch.jpg";
+import prize from "./../../assets/images/prize.png";
 
 const EmblaCarousel = ({ options }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ playOnInit: true, delay: 5000, stopOnInteraction: false }),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    options,
+    [Autoplay({ playOnInit: true, delay: 5000, stopOnInteraction: false })]
+  );
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
+  // Update navigation button states
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
@@ -36,6 +39,7 @@ const EmblaCarousel = ({ options }) => {
     emblaApi.scrollNext();
   }, [emblaApi]);
 
+  // Setup Embla event listeners
   useEffect(() => {
     if (!emblaApi) return;
     onSelect();
@@ -45,8 +49,9 @@ const EmblaCarousel = ({ options }) => {
     };
   }, [emblaApi, onSelect]);
 
+  // Simulate loading animation
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 1000); // simulate loading
+    const timeout = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -54,6 +59,7 @@ const EmblaCarousel = ({ options }) => {
 
   return (
     <div className="w-full max-w-[1500px] mx-auto px-4">
+      {/* Embla viewport */}
       <div
         className="overflow-hidden w-full sm:aspect-[5/2] md:aspect-[16/7] rounded-lg"
         ref={emblaRef}
@@ -69,7 +75,7 @@ const EmblaCarousel = ({ options }) => {
                 <div key={index} className="flex-none w-full p-2 h-full">
                   <img
                     src={src}
-                    alt={`Slide ${index + 1}`} // ✅ fixed here!
+                    alt={`Slide ${index + 1}`}
                     className="w-full h-full object-cover rounded-lg"
                     loading="lazy"
                   />
@@ -78,6 +84,7 @@ const EmblaCarousel = ({ options }) => {
         </div>
       </div>
 
+      {/* Navigation Buttons */}
       {!isLoading && (
         <div className="mt-4 flex justify-center space-x-4">
           <RippleButton
